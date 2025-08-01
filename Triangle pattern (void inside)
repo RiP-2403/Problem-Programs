@@ -1,0 +1,36 @@
+/*
+This program prints,
+A triangle (Kind of a right triangle) with it's insides empty
+Done using nested for loop, & nested if else condition
+*/
+
+import java.util.*;
+public class pattern{
+    public static void main(String[] arg){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter height of the triangle: ");
+        int rows=sc.nextInt();
+        for(int i=0;i<=rows;i++){
+            // This (outer) loop is purely used to print in next line
+            for(int j=0;j<i;j++){
+                // This loop take care of where the " * " needs to be printed
+                if(i==rows){
+                    // This prints the last line/row of the triangle of it's entirety
+                    System.out.print("* ");
+                }
+                else{
+                    // Used to determine where " * " is needed to be printed
+                    if(j==0 || j==i-1){
+                        System.out.print("* ");
+                        // Prints "* " if it's the edge of the triangle
+                    }
+                    else{
+                        System.out.print("  ");
+                        // Makes spaces/voids inside the triangle
+                    }
+                }
+            }
+            System.out.println();
+        }
+    }
+}
