@@ -1,0 +1,30 @@
+/* This program checks whether a word is a palindrome or not
+A palindrome is a word, sentence, verse, or even number that reads the same backward or forward.
+Using for loop, if else conditions
+*/
+
+import java.util.*;
+public class PalindromeChecker {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		boolean checker=true;
+		System.out.println("Palindrome Checker\n========== =======");
+		System.out.print("Enter the word: ");
+		String word=sc.nextLine();
+		String lowerWord=word.toLowerCase(); //Converts the input word into lowercase for ease of operation
+		int len=lowerWord.length(); //Gets the length of the word for looping purpose
+			for(int i=0;i<len;i++) {
+				if(lowerWord.charAt(i)!=lowerWord.charAt((len-1-i))) {  //For each loop this condition checks the "i"th character with the "i"th character from the last of the given word
+					System.out.println(word+" -> Not a Palindrome");
+					break;
+				}
+				else {
+					if(i==len-1) {
+            //Prints "Palindrome" if the loop hasn't breaken, that is, the word passed the palindrome checker, and is print at the last loop
+						System.out.println(word+" -> Palindrome");
+					}
+				}
+			}
+	}
+
+}
