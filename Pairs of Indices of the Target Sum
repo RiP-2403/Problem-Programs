@@ -1,0 +1,33 @@
+// This program prints out the pairs of Indices which gives the sum of a target
+
+import java.util.*;
+public class TargetSum {
+	public static void main(String[] arg) {
+		Scanner sc=new Scanner(System.in);
+		int pairNo=1; // This is just for details during printing
+		int arr[]= new int[100]; // Initializing array
+		System.out.println("Target Sum Pair\n====== === ====");
+		System.out.print("Enter Target sum: ");
+		int target=sc.nextInt();
+		System.out.print("How many numbers in the array: ");
+		int no=sc.nextInt();
+		for(int i=0 ; i<no ; i++ ) {
+      // The loop is used to get user inputs
+			System.out.print("Enter no."+(i+1)+": ");
+			arr[i] = sc.nextInt();
+		}
+		for(int i=0 ; i<no ; i++) {
+			for(int j= i+1 ; j<no ; j++) {
+				int sum = arr[i] + arr[j]; // Sum of the array elements, used for checking
+				if(sum == target && i!=j) { // Checks whether the sum is equal to the target sum, and checks if the index numbers are equal ( to avoid self-pairing)
+					System.out.println("Pair "+pairNo+": [ "+i+","+j+" ]"); // Print outs the Pairs of indices with Pair numbers (Ex: Pair 1, Pair 2,....)
+					pairNo++;
+				}
+			}
+		}
+    // When no pairs are identified, This comes in play
+		if(pairNo==1) {
+			System.out.println("There are no such pairs existing");
+		}
+	}
+}
