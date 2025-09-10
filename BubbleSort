@@ -1,0 +1,37 @@
+/*
+This program does bubble sort using array.
+Bubble Sort:- It is used to sort elements by comparing the elements adjacent to it.
+            - Swaps the element with it's adjacent element if the conditions are not met (i.e: if 2>3, it is false, then their places are swapped). 
+*/
+import java.util.*;
+public class BubbleSort {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int constant=1, arr1[]=new int[10], i, j;
+		System.out.println("Bubble Sort\n****** ****");
+		System.out.print("How many elements?: ");
+		int no=sc.nextInt();	
+		for(i=0;i<no;i++) {
+			System.out.print("Enter element["+constant+"]: ");
+			arr1[i]=sc.nextInt();
+			constant++;
+		}
+		System.out.print("\nBefore Swap: ");
+		for(i=0;i<no;i++) {
+			System.out.print(arr1[i]+"  ");
+		}
+		for(i=0;i<no-1;i++) {
+			for(j=0;j<no-1;j++) {
+				if(arr1[j]>arr1[j+1]){
+					int swap=arr1[j];
+					arr1[j]=arr1[j+1];
+					arr1[j+1]=swap;
+				}
+			}
+		}
+		System.out.print("\n\nAfter Swap: ");
+		for(i=0;i<no;i++) {
+			System.out.print(arr1[i]+"  ");
+		}
+	}
+}
